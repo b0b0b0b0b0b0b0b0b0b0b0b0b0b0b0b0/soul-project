@@ -17,6 +17,16 @@
   * Категории, сортировки, избранные продавцы и лоты, bulk sell, превью шалкера; MiniMessage, PlaceholderAPI.
   * MySQL + Redis на прокси: общий каталог, distributed lock, атомарные покупки; оффлайн-выплаты продавцу в БД.
   * Налоги, лимиты слотов по правам, TTL лотов, claim; Discord/Telegram; админ history/audit/recover.
+### SoulCrates
+* **Ссылка:** [SoulCrates](https://github.com/b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0/SoulCrates)
+* **Описание:** Кейсы для Paper 1.21+ и Folia: premium-анимация, pity, reroll, multi-open и синхрон ключей по сети — без fat-jar и без дюпов на открытии.
+* **Основные функции:**
+  * Несколько типов кейсов (`crates/*.yml`): веса наград, pity, broadcast редких дропов, preview/confirm, cooldown и права per-crate.
+  * Анимация из 3 фаз (key insert → CSGO spinner → firework); ModelEngine, idle-дисплеи на блоках, голограммы (TextDisplay / DecentHolograms).
+  * Виртуальные и физические ключи, `/sc shop` (Vault), `/sc givekey`; reroll с free/paid rolls; bulk open x5/x10.
+  * Привязка к блоку (`/sc setcrate`) и Citizens NPC (`/sc setnpc`); Shift+RMB — preview, RMB — открытие.
+  * MySQL + Redis на прокси: зеркало virtual keys и pity; session lock и consume ключей до анимации.
+  * In-game редактор наград, `/sc stats`, PlaceholderAPI (`%soulcrates_*%`), API-события фаз открытия.
 ### SoulEvents
 * **Ссылка:** [SoulEvents](https://github.com/b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0/SoulEvents)
 * **Описание:** Ядро для серверных ивентов: общий API, сессии, планировщик, каталог схематик, защита от абуза и статистика в SQLite.
